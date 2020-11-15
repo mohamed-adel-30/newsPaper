@@ -1,0 +1,67 @@
+@import '../style/global.scss';
+.wrapper {
+    padding: 5% 0;
+    .contactUs,
+    .links {
+        margin-bottom: 2rem;
+        ul {
+            list-style: none;
+            li {
+                margin-bottom: 0.5rem;
+                a {
+                    font-size: 1.6rem;
+                    color: #707070;
+                }
+            }
+        }
+    }
+    .subscribe {
+        margin-bottom: 2rem;
+        h3 {
+            margin-bottom: 1rem;
+            color: #707070;
+        }
+        .form-group {
+            position: relative;
+            .form-control {
+                font-size: 1.6rem;
+                padding: 1rem 7.2rem 1rem 1rem;
+            }
+            button {
+                @extend %btn;
+                font-size: 1.3rem;
+                padding: 0.6rem 0.5rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+    .follow {
+        h3 {
+            color: #707070;
+            margin-bottom: 1rem;
+        }
+        .follow-icons {
+            display: flex;
+            justify-content: space-around;
+            a {
+                color: #707070;
+                i {
+                    font-size: 2.7rem;
+                }
+            }
+        }
+    }
+}
+
+.copy-rights {
+    background-color: $bgColor;
+    p {
+        font-size: 1rem;
+        padding: 1rem 0;
+        @media screen and (min-width: 600px) {
+            font-size: 1.5rem;
+        }
+    }
+}

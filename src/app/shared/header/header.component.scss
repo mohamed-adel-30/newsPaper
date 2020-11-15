@@ -1,0 +1,198 @@
+@import '../style/global.scss';
+nav {
+    background-color: $bgColor;
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2% 0;
+        @media screen and (min-width: 768px) {
+            padding: 1% 0;
+        }
+    }
+    .logo {
+        display: flex;
+        width: 30%;
+        margin-right: auto;
+        .menu {
+            cursor: pointer;
+            width: 15%;
+            padding-top: 4%;
+            margin-right: 1.5rem;
+        }
+        .company-logo {
+            cursor: pointer;
+            width: 25%;
+        }
+    }
+    .options {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-left: auto;
+        width: 60%;
+        .search {
+            width: 25%;
+            align-items: center;
+            text-align: right;
+            position: relative;
+            i {
+                @extend %navIcons
+            }
+            .show {
+                position: absolute;
+                right: 0;
+            }
+            .search-input {
+                display: flex;
+                position: relative;
+                input {
+                    background-color: #2D717B;
+                    color: #ffffff;
+                }
+                .hidden {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        .notification {
+            width: 15%;
+            i {
+                @extend %navIcons
+            }
+        }
+        .user {
+            width: 45%;
+            img {
+                width: 25px;
+            }
+            p {
+                font-size: 1rem;
+                margin-bottom: 0;
+                color: #ffffff;
+            }
+        }
+        .setting {
+            width: 10%;
+            i {
+                @extend %navIcons;
+            }
+        }
+        @media screen and (min-width:768px) {
+            .search {
+                i {
+                    font-size: 1.8rem;
+                }
+                .search-input {
+                    .hidden {
+                        top: -9%;
+                    }
+                }
+            }
+            .notification {
+                text-align: center;
+                a {
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .user {
+                width: 31%;
+                img {
+                    width: 50px;
+                }
+                span {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .search {
+                i {
+                    font-size: 2rem;
+                }
+                .search-input {
+                    .hidden {
+                        top: -9%;
+                    }
+                }
+            }
+            .notification {
+                text-align: center;
+                a {
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .user {
+                width: 30%;
+                img {
+                    width: 50px;
+                }
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+            .setting {
+                i {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .search {
+                width: 18%;
+                i {
+                    font-size: 2rem;
+                }
+                .search-input {
+                    .hidden {
+                        top: -9%;
+                    }
+                }
+            }
+            .notification {
+                text-align: center;
+                a {
+                    i {
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+            .user {
+                width: 30%;
+                img {
+                    width: 50px;
+                }
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+            .setting {
+                i {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+aside {
+    background-color: $bgColor;
+    width: 80%;
+    min-height: 100vh;
+    app-menu {
+        margin: auto;
+        display: flex;
+    }
+    @media screen and (min-width:600px) {
+        width: 50%;
+    }
+}

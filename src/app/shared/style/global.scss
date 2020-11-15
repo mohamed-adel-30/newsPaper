@@ -1,0 +1,43 @@
+// global variables
+$h1:3.5rem;
+$p:1.8rem;
+$btnColor:#8DC043;
+$bgColor:#068997; //btn style
+%btn {
+    color: #ffffff;
+    background-color: $btnColor;
+}
+
+%navIcons {
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    &:hover {
+        background-color: $btnColor;
+    }
+}
+
+@mixin transform($deg) {
+    -moz-transform: $deg;
+    -ms-transform: $deg;
+    -o-transform: $deg;
+    -webkit-transform: $deg;
+    transform: $deg;
+}
+
+//carousel images
+$fisrtSlide:url('../../../assets/Layer17.jpg');
+$secondSlide:url('../../../assets/slider2.jpg');
+$thirdSlide:url('../../../assets/Layer1copy.jpg');
+$firstSlideMobile:url('../../../assets/Layer17Mobile@2x.jpg');
+$secondSlideMobile:url('../../../assets/slider2Mobile@2x.jpg');
+$thirdSlideMobile:url('../../../assets/layer1Mobile@2x.jpg');
+//media queriy
+$mobile: media screen and (min-width:600px);
+$ipad:media screen and (min-width:768px);
+$ipadPro:media screen and (min-width:992px);
+$laptop:media screen and (min-width:1200px);
+%section {
+    padding: 5rem 0;
+}

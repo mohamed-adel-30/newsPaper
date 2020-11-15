@@ -1,0 +1,312 @@
+@import '../../shared/style/global.scss';
+
+/***************start hero's section style****************/
+
+.hero {
+    /*---------------slider navigation circles--------------*/
+    //from 0 to 600px
+    .carousel-indicators {
+        bottom: 10%;
+        li {
+            height: 0.8rem;
+            width: 0.8rem;
+            border-radius: 50%;
+        }
+        .active {
+            transform: scale(1.2);
+        }
+        @media screen and (min-width: 600px) {
+            li {
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+            }
+            .active {
+                transform: scale(1.2);
+            }
+        }
+        @media screen and(min-width:768px) {
+            li {
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+            }
+            .active {
+                transform: scale(1.2);
+            }
+        }
+        @media screen and(min-width:992px) {
+            li {
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+            }
+            .active {
+                transform: scale(1.2);
+            }
+        }
+        @media screen and(min-width:1200px) {
+            li {
+                height: 1.8rem;
+                width: 1.8rem;
+                border-radius: 50%;
+            }
+            .active {
+                transform: scale(1.2);
+            }
+        }
+    }
+    /*---------------slider's slides--------------*/
+    // 0 to 600px
+    .carousel-inner {
+        position: relative;
+        .first-carousel {
+            height: 37.5rem;
+            background-image: $firstSlideMobile;
+            background-position: center;
+        }
+        .second-carousel {
+            height: 37.5rem;
+            background-image: $secondSlideMobile;
+        }
+        .third-carousel {
+            height: 37.5rem;
+            background-image: $thirdSlideMobile;
+            background-position: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(94, 92, 92, 0.794);
+            .caption {
+                width: 47%;
+                margin: auto;
+                bottom: 20%;
+                p {
+                    font-size: 1.3rem
+                }
+                .btn {
+                    @extend %btn;
+                    padding: 0.5rem 1rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        @media screen and (min-width:600px) {
+            .overlay {
+                .caption {
+                    p {
+                        font-size: 1.3rem
+                    }
+                }
+            }
+        }
+        @media screen and (min-width:992px) {
+            .first-carousel {
+                height: 70rem;
+                max-height: 70rem;
+                background-image: $fisrtSlide;
+                background-position: cover;
+            }
+            .second-carousel {
+                height: 70rem;
+                max-height: 70rem;
+                background-image: $secondSlide;
+                background-position: center;
+            }
+            .third-carousel {
+                height: 70rem;
+                max-height: 70rem;
+                background-image: $thirdSlide;
+                background-position: right;
+            }
+            .overlay {
+                .caption {
+                    width: 58%;
+                    p {
+                        font-size: 2.8rem;
+                    }
+                    .btn {
+                        @extend %btn;
+                        padding: 1rem 2rem;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .first-carousel {
+                background-position: cover;
+            }
+            .second-carousel {
+                background-position: center;
+            }
+            .third-carousel {
+                background-position: right;
+            }
+            .overlay {
+                .caption {
+                    p {
+                        font-size: 3.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .next {
+        @include transform(rotate(180deg));
+    }
+}
+
+
+/**************the end of hero's section**************/
+
+
+/**************start  new's section style**************/
+
+.wrapper {
+    // 0 to 600px
+    @extend %section;
+    .news-header {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        .newsLink {
+            color: $btnColor;
+            span {
+                font-size: 2rem;
+                margin-right: 0.6rem;
+            }
+        }
+        @media screen and (min-width:600px) {
+            display: flex;
+            flex-flow: unset;
+            justify-content: space-between;
+        }
+        @media screen and (min-width:768px) {}
+    }
+    .news-wrapper {
+        display: flex;
+        flex-flow: column;
+        .card {
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            margin: 1.5rem 0rem;
+            box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem #e4e4e4;
+            a {
+                color: #000000;
+            }
+            .share {
+                position: relative;
+                i {
+                    padding: 0.2rem;
+                    font-size: 1.5rem;
+                    color: $btnColor;
+                    cursor: pointer;
+                    &:last-child {
+                        &:active {
+                            transform: scale(0.7);
+                        }
+                    }
+                }
+                .social {
+                    position: absolute;
+                    right: 0;
+                    a {
+                        padding: 1rem;
+                        i {
+                            padding: 1rem;
+                            font-size: 2.5rem;
+                        }
+                        &:first-child {
+                            border-radius: 0.5rem 0 0 0.5rem;
+                        }
+                        &:last-child {
+                            border-radius: 0 0.5rem 0.5rem 0;
+                        }
+                    }
+                }
+            }
+            img {
+                min-height: 20rem;
+                max-height: 20rem;
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+            p {
+                padding-bottom: 4rem;
+            }
+            span {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+            .badge {
+                margin-bottom: 2rem;
+                width: 10rem;
+                background-color: #E3E3E3;
+                border-radius: 0.5rem;
+            }
+            .article-date {
+                position: absolute;
+                bottom: 2%;
+                color: #707070;
+                i {
+                    color: $btnColor;
+                    margin-right: 1rem;
+                }
+            }
+            &:hover {
+                background-color: #ffffff;
+                box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem #e4e4e4;
+            }
+        }
+        @media screen and (min-width:600px) {
+            display: flex;
+            flex-flow: wrap;
+            .card {
+                width: 46%;
+                margin: 1.5rem 1rem;
+                .share {
+                    i {
+                        padding: 0.2rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        @media screen and (min-width:768px) {
+            .card {
+                .share {
+                    i {
+                        padding: 0.8rem;
+                        font-size: 2.5rem;
+                    }
+                }
+                h2 {
+                    // height: 18rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .card {
+                width: 31.4%;
+                margin: 1.5rem 1rem;
+                // h2 {
+                //     // height: 22rem;
+                //     margin-bottom: ;
+                // }
+            }
+        }
+        @media screen and (min-width:1600px) {
+            // .card {
+            //     // h2 {
+            //     //     height: 15rem;
+            //     // }
+            // }
+        }
+    }
+}

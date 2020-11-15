@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif
+}
+
+body {
+    h1 {
+        //from 0 to 556px
+        font-size: 2rem;
+        font-weight: 600;
+        @media screen and (min-width: 600px) {
+            font-size: 2 rem;
+        }
+        @media screen and(min-width:768px) {
+            font-size: 4rem;
+        }
+        @media screen and(min-width:992px) {
+            font-size: 6rem;
+        }
+        @media screen and(min-width:1200px) {
+            font-size: 6rem;
+        }
+    }
+    h2 {
+        //from 0 to 600px
+        font-size: 2rem;
+        font-weight: 600;
+        @media screen and (min-width: 600px) {
+            font-size: 2.8rem;
+        }
+        @media screen and(min-width:768px) {
+            font-size: 2.8rem;
+        }
+        @media screen and(min-width:992px) {
+            font-size: 2.8rem;
+        }
+        @media screen and(min-width:1200px) {
+            font-size: 2.8rem;
+        }
+    }
+    p {
+        //from 0 to 600px
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #707070;
+        @media screen and (min-width: 600px) {
+            font-size: 1.5 rem;
+        }
+        @media screen and(min-width:768px) {
+            font-size: 2rem;
+        }
+        @media screen and(min-width:992px) {
+            font-size: 2rem;
+        }
+        @media screen and(min-width:1200px) {
+            font-size: 2rem;
+        }
+    }
+    a {
+        //from 0 to 600px
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-decoration: none;
+        color: #000000;
+        &:hover {
+            text-decoration: none;
+        }
+        @media screen and (min-width: 600px) {
+            font-size: 1.5 rem;
+        }
+        @media screen and(min-width:768px) {
+            font-size: 2rem;
+        }
+        @media screen and(min-width:992px) {
+            font-size: 2rem;
+        }
+        @media screen and(min-width:1200px) {
+            font-size: 2rem;
+        }
+    }
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+}

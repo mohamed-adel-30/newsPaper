@@ -1,0 +1,62 @@
+<nav>
+    <div class="wrapper ">
+        <div class="logo">
+            <div (click)='collapseMenu=!collapseMenu' class="menu">
+                <img class="img-fluid" src="../../../assets/Menu.png" alt="">
+            </div>
+            <a href="" class="company-logo">
+                <img class="img-fluid" src="../../../assets/Link_logo_vertical_color_Light_RGB.png" alt="">
+            </a>
+        </div>
+        <div class="options">
+            <div class="search d-flex">
+                <div [ngStyle]="{'visibility': showSearch ?'visible' : 'hidden'}" class="search-input">
+
+                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Search">
+                    <i class="hidden fas fa-search" (click)="showSearch = !showSearch"></i>
+
+                </div>
+                <i [ngStyle]="{'visibility': !showSearch ?'visible' : 'hidden'}" class="fas fa-search show" (click)="showSearch = !showSearch"></i>
+
+            </div>
+            <div class="notification">
+                <div class="dropdown">
+                    <a type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-bell"></i> </a>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item disabled" href="#">Disabled action</a>
+                        <h6 class="dropdown-header">Section header</h6>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">After divider action</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user d-flex align-items-center">
+                <img src="../../../assets/img.png" alt="">
+                <p>User name</p>
+            </div>
+            <div class="setting">
+                <div class="dropdown">
+                    <a type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item disabled" href="#">Disabled action</a>
+                        <h6 class="dropdown-header">Section header</h6>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">After divider action</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<aside *ngIf="collapseMenu">
+    <app-menu></app-menu>
+</aside>
