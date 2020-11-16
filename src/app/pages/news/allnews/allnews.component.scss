@@ -1,0 +1,241 @@
+@import '../../../shared/style/global.scss';
+section {
+    padding-top: 5%;
+    background-color: #EFEFEF;
+    .row {
+        padding-top: 5rem;
+        .search {
+            .searchInput {
+                position: relative;
+                padding: 1rem 5rem 1rem 1rem;
+                width: 100%;
+            }
+            .btn {
+                @extend %btn;
+                position: absolute;
+                right: 15px;
+                bottom: 10px;
+                top: 27px;
+                i {
+                    font-size: 2rem;
+                    padding: 0 2rem;
+                }
+            }
+        }
+        .sortNews {
+            .sort {
+                padding: 2rem 3.5rem;
+                border: none;
+                font-size: 1.5rem;
+                color: $btnColor;
+                i {
+                    transform: rotate(90deg);
+                }
+                &:focus-within {
+                    i {
+                        color: $bgColor;
+                    }
+                }
+            }
+            .dropdown-menu {
+                .dropdown-item {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        @media screen and (min-width: 768px) {
+            .search {
+                .searchInput {
+                    position: relative;
+                    padding: 2rem 10rem 2rem 1rem;
+                    width: 100%;
+                }
+                .btn {
+                    // @extend %btn;
+                    position: absolute;
+                    right: 15px;
+                    bottom: 10px;
+                    top: 27px;
+                    i {
+                        font-size: 3rem;
+                        padding: 0 2rem;
+                    }
+                }
+            }
+            .sortNews {
+                .sort {
+                    padding: 2rem 3.5rem;
+                    border: none;
+                    font-size: 1.5rem;
+                    color: $btnColor;
+                    i {
+                        transform: rotate(90deg);
+                    }
+                    &:focus-within {
+                        i {
+                            color: $bgColor;
+                        }
+                    }
+                }
+                .dropdown-menu {
+                    .dropdown-item {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+    label {
+        font-size: 1.2rem;
+    }
+    input,
+    select,
+    option {
+        padding: 1rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        &:focus {
+            border: 1px solid blue;
+        }
+    }
+    @media screen and (min-width:768px) {
+        label {
+            font-size: 1.5rem;
+        }
+        input,
+        select,
+        option {
+            padding: 2rem 1rem;
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            &:focus {
+                border: 1px solid blue;
+            }
+        }
+    }
+}
+
+.news-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    .card {
+        border: none;
+        border-radius: 0.5rem;
+        width: 100%;
+        margin: 1.5rem 0rem;
+        box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem #e4e4e4;
+        a {
+            color: #000000;
+        }
+        .share {
+            position: relative;
+            i {
+                padding: 0.2rem;
+                font-size: 1.5rem;
+                color: $btnColor;
+                cursor: pointer;
+                &:last-child {
+                    &:active {
+                        transform: scale(0.7);
+                    }
+                }
+            }
+            .social {
+                position: absolute;
+                right: 0;
+                a {
+                    padding: 1rem;
+                    i {
+                        padding: 1rem;
+                        font-size: 2.5rem;
+                    }
+                    &:first-child {
+                        border-radius: 0.5rem 0 0 0.5rem;
+                    }
+                    &:last-child {
+                        border-radius: 0 0.5rem 0.5rem 0;
+                    }
+                }
+            }
+        }
+        img {
+            min-height: 20rem;
+            max-height: 20rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        p {
+            padding-bottom: 4rem;
+        }
+        span {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .badge {
+            margin-bottom: 2rem;
+            width: 10rem;
+            background-color: #E3E3E3;
+            border-radius: 0.5rem;
+        }
+        .article-date {
+            position: absolute;
+            bottom: 2%;
+            color: #707070;
+            i {
+                color: $btnColor;
+                margin-right: 1rem;
+            }
+        }
+        &:hover {
+            background-color: #ffffff;
+            box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem #e4e4e4;
+        }
+    }
+    @media screen and (min-width:600px) {
+        display: flex;
+        flex-flow: wrap;
+        .card {
+            width: 46%;
+            margin: 1.5rem 1rem;
+            .share {
+                i {
+                    padding: 0.2rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    @media screen and (min-width:768px) {
+        .card {
+            .share {
+                i {
+                    padding: 0.8rem;
+                    font-size: 2.5rem;
+                }
+            }
+            h2 {
+                // height: 18rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    @media screen and (min-width:1200px) {
+        .card {
+            width: 31.4%;
+            margin: 1.5rem 1rem;
+            // h2 {
+            //     // height: 22rem;
+            //     margin-bottom: ;
+            // }
+        }
+    }
+    @media screen and (min-width:1600px) {
+        // .card {
+        //     // h2 {
+        //     //     height: 15rem;
+        //     // }
+        // }
+    }
+}

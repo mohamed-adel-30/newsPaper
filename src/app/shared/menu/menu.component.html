@@ -11,8 +11,8 @@
 
 <ul>
     <li>
-        <a href="">
-            <h2>Home</h2>
+        <a (click)='active = !active' href="">
+            <h2 [ngStyle]="{'color': active ? '#8DC043':'#ffffff'}">Home</h2>
         </a>
     </li>
     <li>

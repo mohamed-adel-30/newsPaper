@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {PagesModule} from './pages/pages.module';
 import {HomeService} from './providers/home.service'
+import {NewsService} from './providers/news.service'
+
 import {WebserviceService} from './providers/webservice.service'
 
 
@@ -21,7 +23,7 @@ import {WebserviceService} from './providers/webservice.service'
     SharedModule,
     PagesModule
   ],
-  providers: [WebserviceService,HomeService],
+  providers: [WebserviceService,HomeService,NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

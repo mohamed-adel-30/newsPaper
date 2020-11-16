@@ -7,7 +7,7 @@ import {NewsDetailsComponent} from './news-details/news-details.component'
 
 const routes: Routes = [
   {
-    path:'news',
+    path:'',
     component:AllnewsComponent
   },
   {
