@@ -49,7 +49,6 @@ export class AllnewsComponent implements OnInit {
       // filter by categories
 
       searchByCategory(category){
-
         let selectedCategory ;
         let filteredData = []
          this.categories.forEach(e => {
@@ -57,7 +56,6 @@ export class AllnewsComponent implements OnInit {
             selectedCategory = e
           }
         });
-
         this.allNews.forEach(element => {
           if(element.sourceID === selectedCategory.id ){
             filteredData.push(element)
@@ -65,13 +63,14 @@ export class AllnewsComponent implements OnInit {
         });
         this.displayNews = filteredData
         console.log(this.displayNews);
-
       }
+
+
+
+      // filter by name
+
       search(event,term){
-
-
         if(event.keyCode === 13){
-
           let text = term.value.toLowerCase()
           let result=[];
           let article;
@@ -83,9 +82,6 @@ export class AllnewsComponent implements OnInit {
             }
           });
           this.displayNews= result
-
-
-
         }
       }
 
@@ -101,21 +97,9 @@ export class AllnewsComponent implements OnInit {
           }
         });
         this.displayNews= result
-
-
-
-
-
-
-
       }
 
-        // this.allNews.forEach(element => {
-        //   if(element.title.toLowerCase() === result ){
-        //     console.log(element);
-
-        //   }
-        // });
+        
 
 
 }

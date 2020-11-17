@@ -1,1 +1,37 @@
-<p>news-details works!</p>
+<section>
+    <div class="wrapper">
+        <h1>News Details</h1>
+        <div *ngIf='article' class="card">
+            <img class="card-img-top img-fluid" src="{{article.urlToImage}}" alt="">
+            <div class="card-body p-5">
+                <span>category</span>
+                <div class="articleHeader ">
+                    <h2 class="card-title text-dark">{{article.title}}</h2>
+                    <div class="share text-right">
+                        <!-- favorite icon -->
+                        <i [ngStyle]="{'display':favorite === true ? 'none':'inline'}" class="far fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
+                        <i [ngStyle]="{'display':favorite === false ? 'none':'inline'}" class="fas fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
+
+                        <!-- share icon -->
+                        <i class="fas fa-share-alt fa-3x" (click)='share=!share'></i>
+                        <!-- <img class="share-icon" src="./../../../assets/ic_share_24px.svg" alt="" srcset=""> -->
+                        <!-- social sharing -->
+                        <div *ngIf='share' class="social">
+                            <a class=" bg-primary text-white">
+                                <i class="fab text-white fa-facebook-f"></i>
+                            </a>
+                            <a class=" bg-info text-white">
+                                <i class="text-white fab fa-twitter"></i>
+                            </a>
+                            <a class=" bg-danger">
+                                <i class="text-white fas fa-envelope"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <p class="card-text">{{article.content}}</p>
+            </div>
+        </div>
+    </div>
+</section>

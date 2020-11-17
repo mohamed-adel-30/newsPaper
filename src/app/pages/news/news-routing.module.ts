@@ -8,10 +8,10 @@ import {NewsDetailsComponent} from './news-details/news-details.component'
 const routes: Routes = [
   {
     path:'',
-    component:AllnewsComponent
+    component:AllnewsComponent,
   },
   {
-    path:'news/details',
+    path:'details/:id',
     component:NewsDetailsComponent
   }
 ];

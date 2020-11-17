@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     this.getHomeNews()
   }
   getHomeNews(){
+    let sortedArticals
     this.service.getAllNews().subscribe(data=>{
       this.allNews =data
       this.allNews.forEach(element => {
@@ -25,9 +26,6 @@ export class HomeComponent implements OnInit {
         }
 
       });
-      console.log(this.homeArticles);
-
-
     })
   }
 

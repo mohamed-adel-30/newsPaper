@@ -1,0 +1,85 @@
+@import '../../../shared/style/global.scss';
+section {
+    padding: 5% 0;
+    background-color: #EFEFEF;
+    h1 {
+        padding: 3rem 0;
+    }
+    .card {
+        img {
+            max-height: 40rem;
+        }
+        span {
+            font-size: 1.5rem;
+        }
+        .articleHeader {
+            display: flex;
+            flex-flow: column;
+            .share {
+                position: relative;
+                i {
+                    padding: 0.2rem;
+                    font-size: 1.5rem;
+                    color: $btnColor;
+                    cursor: pointer;
+                    &:last-child {
+                        &:active {
+                            transform: scale(0.7);
+                        }
+                    }
+                }
+                .social {
+                    position: absolute;
+                    right: 0;
+                    display: flex;
+                    a {
+                        padding: 0.5rem;
+                        i {
+                            padding: 1rem;
+                            font-size: 1.5rem;
+                        }
+                        &:first-child {
+                            border-radius: 0.5rem 0 0 0.5rem;
+                        }
+                        &:last-child {
+                            border-radius: 0 0.5rem 0.5rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width:600px) {
+        .card {
+            .articleHeader {
+                display: flex;
+                flex-flow: row;
+                .share {
+                    width: 30%;
+                    i {
+                        padding: 0.8rem;
+                        font-size: 2.5rem;
+                    }
+                    .social {
+                        a {
+                            padding: 1rem;
+                            i {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width:768px) {
+        .card {
+            .share {
+                i {
+                    padding: 0.8rem;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
