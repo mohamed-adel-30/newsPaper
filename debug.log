@@ -1,1 +1,19 @@
 [1116/210903.948:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1118/003835.663:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1118/112001.245:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1118/170822.877:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ffe3f126e00 of 12 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1118/170822.877:WARNING:process_snapshot_win.cc(71)] ReadMemory ExceptionInformation failed
+[1118/170822.875:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1118/170822.875:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1118/170823.380:ERROR:exception_snapshot_win.cc(99)] thread ID 14224 not found in process
+[1118/170823.380:ERROR:exception_snapshot_win.cc(99)] thread ID 15224 not found in process
+[1118/170822.877:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1118/170822.675:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1118/170822.875:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1118/170822.876:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1118/170823.381:ERROR:exception_snapshot_win.cc(99)] thread ID 15256 not found in process
+[1118/170822.875:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1118/170823.381:ERROR:exception_snapshot_win.cc(99)] thread ID 15596 not found in process
+[1118/170823.381:ERROR:exception_snapshot_win.cc(99)] thread ID 12812 not found in process
+[1118/170823.381:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits64>]: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1118/170823.381:ERROR:process_info.cc(551)] ReadProcessData failed

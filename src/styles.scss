@@ -19,46 +19,54 @@ body {
         @media screen and(min-width:768px) {
             font-size: 4rem;
         }
-        @media screen and(min-width:992px) {
-            font-size: 6rem;
-        }
-        @media screen and(min-width:1200px) {
-            font-size: 6rem;
+    }
+    .breadcrumb {
+        background-color: transparent;
+        padding: 2rem 0;
+        a {
+            font-size: 1.5rem;
+            &:nth-child(n+2)::before {
+                content: '>';
+                font-weight: 900;
+                font-size: 16px;
+                padding: 0 1rem;
+                color: lightgray;
+            }
         }
     }
     h2 {
         //from 0 to 600px
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 600;
         @media screen and (min-width: 600px) {
-            font-size: 2.8rem;
+            font-size: 2rem;
         }
         @media screen and(min-width:768px) {
-            font-size: 2.8rem;
+            font-size: 2rem;
         }
         @media screen and(min-width:992px) {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
         }
         @media screen and(min-width:1200px) {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
         }
     }
     p {
         //from 0 to 600px
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 400;
         color: #707070;
         @media screen and (min-width: 600px) {
-            font-size: 1.5 rem;
+            font-size: 1.6 rem;
         }
         @media screen and(min-width:768px) {
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
         @media screen and(min-width:992px) {
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
         @media screen and(min-width:1200px) {
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
     }
     a {
@@ -74,13 +82,13 @@ body {
             font-size: 1.5 rem;
         }
         @media screen and(min-width:768px) {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         @media screen and(min-width:992px) {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         @media screen and(min-width:1200px) {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
     }
     .wrapper {

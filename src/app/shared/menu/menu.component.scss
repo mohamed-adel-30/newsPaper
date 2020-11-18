@@ -1,7 +1,6 @@
 @import "../style/global.scss";
 .followus {
     border-right: 2px solid #088d9c;
-    ;
     width: 30%;
     height: 100vh;
     position: relative;
@@ -10,17 +9,17 @@
         display: flex;
         flex-flow: column;
         position: absolute;
-        bottom: 10%;
+        bottom: 12%;
         left: 45%;
         right: 45%;
         a {
             color: #ffffff;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             img {
-                width: 2rem;
+                width: 1.5rem;
             }
             i {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }
@@ -28,12 +27,26 @@
         width: 25%;
         .follow-icons {
             a {
-                padding: 1.5rem 0;
+                padding: 0.8rem 0;
+                img {
+                    width: 1.5rem;
+                }
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    @media screen and (min-width:768px) {
+        width: 25%;
+        .follow-icons {
+            a {
+                padding: 1rem 0;
                 img {
                     width: 2rem;
                 }
                 i {
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                 }
             }
         }
@@ -46,8 +59,8 @@ ul {
     li {
         display: flex;
         flex-flow: column;
-        padding: 10% 0;
-        h2 {
+        padding: 1rem 0;
+        h3 {
             color: #ffffff;
             margin-bottom: 1rem;
             &:active {
@@ -57,13 +70,41 @@ ul {
         a {
             color: #E3E3E3;
             font-weight: 300;
+            font-size: 1.5rem;
             &:active {
                 color: $btnColor;
             }
         }
         &:last-child {
             position: absolute;
-            bottom: 5%;
+            bottom: 10%;
+        }
+    }
+    @media screen and (min-width:992px) {
+        li {
+            display: flex;
+            flex-flow: column;
+            padding: 2rem 0;
+            h3 {
+                color: #ffffff;
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                &:active {
+                    color: $btnColor;
+                }
+            }
+            a {
+                color: #E3E3E3;
+                font-weight: 300;
+                font-size: 1.8rem;
+                &:active {
+                    color: $btnColor;
+                }
+            }
+            &:last-child {
+                position: absolute;
+                bottom: 10%;
+            }
         }
     }
 }

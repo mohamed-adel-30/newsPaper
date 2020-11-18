@@ -1,10 +1,16 @@
 <section>
     <div class="wrapper">
+        <nav class="breadcrumb">
+            <a class="breadcrumb-item text-primary" routerLink=''>Home</a>
+            <a class="breadcrumb-item text-primary" routerLink='/news'>News</a>
+            <a class="breadcrumb-item text-secondary">Details</a>
+
+        </nav>
         <h1>News Details</h1>
-        <div *ngIf='article' class="card">
+        <div *ngIf='article , categoryName' class="card">
             <img class="card-img-top img-fluid" src="{{article.urlToImage}}" alt="">
             <div class="card-body p-5">
-                <span>category</span>
+                <span>{{categoryName}}</span>
                 <div class="articleHeader ">
                     <h2 class="card-title text-dark">{{article.title}}</h2>
                     <div class="share text-right">
@@ -31,6 +37,43 @@
                     </div>
                 </div>
                 <p class="card-text">{{article.content}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="related-tobics">
+    <div class="wrapper">
+        <h1>related tobics</h1>
+        <div class="tobics-container">
+
+            <div class="related-articles" *ngIf="article">
+                <img class="img-fluid" src="{{article.urlToImage}}" alt="">
+                <div class="relatedContent">
+                    <span>Category</span>
+                    <h2>Next Step Of IOT</h2>
+
+                    <a class="LinkHov" href="#">View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                </div>
+            </div>
+            <div class="related-articles" *ngIf="article">
+                <img class="img-fluid" src="{{article.urlToImage}}" alt="">
+                <div class="relatedContent">
+                    <span>Category</span>
+                    <h2>Next Step Of IOT</h2>
+
+                    <a class="LinkHov" href="#">View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                </div>
+            </div>
+            <div class="related-articles" *ngIf="article">
+                <img class="img-fluid" src="{{article.urlToImage}}" alt="">
+                <div class="relatedContent">
+                    <span>Category</span>
+                    <h2>Next Step Of IOT</h2>
+
+                    <a class="LinkHov" href="#">View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                </div>
             </div>
         </div>
     </div>

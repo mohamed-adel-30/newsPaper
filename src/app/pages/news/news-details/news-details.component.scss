@@ -83,3 +83,55 @@ section {
         }
     }
 }
+
+.related-tobics {
+    .wrapper {
+        .tobics-container {
+            display: flex;
+            flex-flow: column;
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-flow: row;
+            }
+            .related-articles {
+                width: 100%;
+                position: relative;
+                @media screen and (min-width: 768px) {
+                    width: 31.4%;
+                    margin: 1rem 1rem;
+                }
+                img {
+                    width: 100%;
+                    object-fit: fill;
+                    min-height: 40rem;
+                    border-radius: 0.5rem;
+                }
+                .relatedContent {
+                    background-color: rgba(255, 255, 255, 0.9);
+                    border-radius: 5px;
+                    position: absolute;
+                    padding: 3rem;
+                    bottom: 3%;
+                    right: 2%;
+                    left: 2%;
+                }
+                .LinkHov {
+                    text-decoration: none;
+                    color: $btnColor;
+                    transition: all 1s ease;
+                    font-size: 1.6rem;
+                    &:hover {
+                        color: $bgColor;
+                    }
+                    .ArrowHov {
+                        margin-left: 5px;
+                        transition: transform 1.5s ease;
+                    }
+                    &:hover .ArrowHov i {
+                        transform: scaleX(2);
+                    }
+                }
+            }
+        }
+    }
+}

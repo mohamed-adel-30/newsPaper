@@ -5,24 +5,32 @@ nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2% 0;
+        padding: 0.5rem 0;
         @media screen and (min-width: 768px) {
-            padding: 1% 0;
+            padding: 1rem 0;
         }
     }
     .logo {
         display: flex;
-        width: 30%;
+        align-items: center;
         margin-right: auto;
         .menu {
             cursor: pointer;
-            width: 15%;
-            padding-top: 4%;
+            width: 1.8rem;
             margin-right: 1.5rem;
         }
         .company-logo {
             cursor: pointer;
-            width: 25%;
+            width: 3.5rem;
+        }
+        @media screen and (min-width:768px) {
+            .menu {
+                width: 3rem;
+                margin-right: 4rem;
+            }
+            .company-logo {
+                width: 5.5rem;
+            }
         }
     }
     .options {
@@ -30,9 +38,10 @@ nav {
         justify-content: flex-end;
         align-items: center;
         margin-left: auto;
-        width: 60%;
+        // width: 60%;
         .search {
             width: 40%;
+            margin-right: 0.5rem;
             align-items: center;
             text-align: right;
             position: relative;
@@ -54,15 +63,33 @@ nav {
                 .hidden {
                     position: absolute;
                     right: 0;
-                    top: 2px;
+                    top: 10%;
+                    transition: 0;
                     &:hover {
                         background-color: transparent;
                     }
                 }
             }
+            .toats {
+                visibility: hidden;
+                color: #ffffff;
+                font-size: 1rem;
+                background-color: rgba(30, 30, 30, 0.4);
+                padding: 0.2rem 0.5rem;
+                border-radius: 0.5rem;
+                position: absolute;
+                right: -1rem;
+                bottom: -2.5rem;
+            }
+            &:hover {
+                .toats {
+                    visibility: visible;
+                }
+            }
         }
         .notification {
-            width: 10%;
+            margin-right: 0.5rem;
+            position: relative;
             a {
                 i {
                     @extend %navIcons;
@@ -70,7 +97,10 @@ nav {
                 }
             }
             .dropdown-menu {
-                transform: translate3d(-125px, 25px, 0px) !important;
+                transform: translate3d(-115px, 25px, 0px) !important;
+                a {
+                    font-size: 1rem;
+                }
                  :last-child {
                     color: $btnColor;
                     i {
@@ -81,33 +111,72 @@ nav {
                         i {
                             color: $bgColor;
                             background-color: transparent;
-                            transform: scaleX(2);
+                            transform: scaleX(1.5);
                         }
                     }
                 }
             }
+            .toats {
+                @extend %navToast;
+            }
+            &:hover {
+                .toats {
+                    visibility: visible;
+                }
+            }
         }
         .user {
-            width: 45%;
+            margin-right: 0.3rem;
             img {
                 width: 25px;
             }
             p {
-                font-size: 0.8rem;
+                font-size: 1rem;
+                font-weight: 100;
                 margin-bottom: 0;
                 color: #ffffff;
             }
         }
         .setting {
-            width: 5%;
+            position: relative;
             i {
                 @extend %navIcons;
+            }
+            .dropdown-menu {
+                transform: translate3d(-105px, 25px, 0px) !important;
+                a {
+                    font-size: 1rem;
+                }
+                 :last-child {
+                    color: $btnColor;
+                    i {
+                        padding-left: 1rem;
+                    }
+                    &:hover {
+                        color: $bgColor;
+                        i {
+                            color: $bgColor;
+                            background-color: transparent;
+                            transform: scaleX(1.2);
+                        }
+                    }
+                }
+            }
+            .toats {
+                @extend %navToast;
+            }
+            &:hover {
+                .toats {
+                    visibility: visible;
+                }
             }
         }
         @media screen and (min-width:768px) {
             .search {
+                margin-right: 1rem;
                 i {
                     font-size: 1.8rem;
+                    padding: 1rem;
                 }
                 .search-input {
                     input {
@@ -115,20 +184,31 @@ nav {
                         font-size: 1.5rem;
                     }
                     .hidden {
-                        top: 7%;
+                        top: -7%;
                     }
+                }
+                .toats {
+                    padding: 0.5rem 1rem;
+                    bottom: -3rem;
                 }
             }
             .notification {
+                margin-right: 1rem;
                 text-align: center;
                 a {
                     i {
                         font-size: 2rem;
+                        padding: 1rem;
                     }
+                }
+                .toats {
+                    padding: 0.5rem 1rem;
+                    left: -1rem;
+                    bottom: -3rem;
                 }
             }
             .user {
-                width: 31%;
+                margin-right: 1rem;
                 img {
                     width: 50px;
                 }
@@ -137,34 +217,52 @@ nav {
                 }
             }
             .setting {
-                width: 10%;
+                margin-right: 1rem;
                 a {
                     i {
                         font-size: 1.5rem;
+                        padding: 1rem;
                     }
+                }
+                .toats {
+                    padding: 0.5rem 1rem;
+                    left: -1rem;
+                    bottom: -3rem;
                 }
             }
         }
         @media screen and (min-width:1024px) {
             .search {
+                margin-right: 2rem;
                 i {
                     font-size: 2rem;
                 }
                 .search-input {
                     .hidden {
-                        top: 3%;
+                        top: -12%;
                     }
                 }
             }
             .notification {
+                margin-right: 2rem;
                 text-align: center;
                 a {
                     i {
                         font-size: 2rem;
                     }
                 }
+                .dropdown-menu {
+                    transform: translate3d(-145px, 35px, 0px) !important;
+                    a {
+                        font-size: 1.5rem;
+                        i {
+                            padding-left: 1.5rem;
+                        }
+                    }
+                }
             }
             .user {
+                margin-right: 2rem;
                 img {
                     width: 50px;
                 }
@@ -173,9 +271,15 @@ nav {
                 }
             }
             .setting {
+                margin-right: 2rem;
                 a {
                     i {
                         font-size: 2rem;
+                    }
+                }
+                .dropdown-menu {
+                    a {
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -187,7 +291,7 @@ nav {
                 }
                 .search-input {
                     .hidden {
-                        top: 3%;
+                        top: -12%;
                     }
                 }
             }
@@ -198,9 +302,14 @@ nav {
                         font-size: 2.2rem;
                     }
                 }
+                .dropdown-menu {
+                    transform: translate3d(-155px, 35px, 0px) !important;
+                    a {
+                        font-size: 1.5rem;
+                    }
+                }
             }
             .user {
-                width: 24%;
                 img {
                     width: 50px;
                 }
@@ -211,6 +320,11 @@ nav {
             .setting {
                 i {
                     font-size: 2rem;
+                }
+                .dropdown-menu {
+                    a {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }

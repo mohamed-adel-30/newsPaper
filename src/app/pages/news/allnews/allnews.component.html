@@ -2,25 +2,25 @@
     <div class="wrapper">
 
         <nav class="breadcrumb">
-            <a class="breadcrumb-item" routerLink=''>Home</a>
-            <a class="breadcrumb-item">News</a>
+            <a class="breadcrumb-item text-primary" routerLink=''>Home</a>
+            <a class="breadcrumb-item text-secondary">News</a>
         </nav>
         <h1>News</h1>
         <div class="row">
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-lg-2 order-2 order-lg-1">
                 <div class="form-group d-flex flex-column">
                     <label for="from">From</label>
                     <input type="date" name="" id="" placeholder="select" aria-describedby="helpId">
                 </div>
             </div>
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-lg-2 order-3 order-lg-2">
                 <div class="form-group d-flex flex-column">
                     <label for="to">To</label>
                     <input type="date" name="" id="" placeholder="select" aria-describedby="helpId">
                 </div>
 
             </div>
-            <div class="col-6 col-lg-2">
+            <div class="col-6  col-lg-2 order-4 order-lg-3">
                 <div class="form-group d-flex flex-column">
                     <label for="category">Category</label>
                     <select #categoryFilter name="" (change)="searchByCategory(categoryFilter)" id="" aria-placeholder="select category">
@@ -29,17 +29,15 @@
                     </select>
                 </div>
             </div>
-            <div class="col-12 order-5
+            <div class="col-12 order-1
             order-lg-4 col-lg-4 search">
-                <div class="form-group    ">
-                    <label class="invisible" for="">category</label>
+                <div class="form-group d-flex    ">
 
                     <input #newsSearch type="text" class="searchInput" name="" id="" (keypress)='search($event,newsSearch)' aria-describedby="helpId" placeholder="search">
                     <button (click)='searchByName(newsSearch)' type="submit" class="btn"><i class="fas fa-search"></i></button>
                 </div>
             </div>
-            <div class="col-6 order-4 order-lg-5   col-lg-2 ">
-                <label class="invisible" for="">category</label>
+            <div class="col-6 order-5   col-lg-2 ">
 
                 <div class="form-group sortNews dropdown open">
                     <a class="sort" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,7 +45,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="triggerId">
                         <button class="dropdown-item" href="#">A to Z</button>
-                        <button class="dropdown-item disabled" href="#">Z to A</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" href="#">Z to A</button>
                     </div>
                 </div>
             </div>
@@ -94,4 +93,17 @@
             </div>
         </div>
     </div>
+    <!-- <div class="row">
+        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+            <span><strong>Current Active Page = </strong> {{activePage}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+            <div class="float-right">
+                <app-pagination [totalRecords]="displayNews.length" [recordsPerPage]="5" (onPageChange)="displayActivePage($event)"></app-pagination>
+            </div>
+        </div>
+    </div> -->
+
 </section>

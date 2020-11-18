@@ -1,33 +1,62 @@
 @import '../../../shared/style/global.scss';
 section {
-    padding-top: 5%;
     background-color: #EFEFEF;
     .row {
         padding-top: 5rem;
+        align-items: flex-end;
         .search {
             .searchInput {
                 position: relative;
-                padding: 1rem 5rem 1rem 1rem;
                 width: 100%;
             }
             .btn {
                 @extend %btn;
                 position: absolute;
-                right: 15px;
-                bottom: 10px;
-                top: 27px;
+                bottom: 22%;
+                right: 4%;
+                top: 0;
                 i {
-                    font-size: 2rem;
-                    padding: 0 2rem;
+                    font-size: 1.5rem;
+                    padding: 0 1rem;
+                }
+            }
+            @media screen and (min-width: 768px) {
+                .btn {
+                    bottom: 21%;
+                    right: 2%;
+                    i {
+                        font-size: 1.5rem;
+                        padding: 0 2rem;
+                    }
+                }
+            }
+            @media screen and (min-width:1024px) {
+                .searchInput {
+                    padding-right: 8rem;
+                }
+                .btn {
+                    top: 0%;
+                    bottom: 21%;
+                    right: 5%;
+                }
+            }
+            @media screen and (min-width:1200px) {
+                .btn {
+                    top: 0%;
+                    bottom: 28%;
+                    right: 3%;
                 }
             }
         }
         .sortNews {
+            text-align: center;
             .sort {
-                padding: 2rem 3.5rem;
+                padding: 0.7rem;
                 border: none;
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 color: $btnColor;
+                border-radius: 0.5rem;
+                transition: all 1s ease;
                 i {
                     transform: rotate(90deg);
                 }
@@ -36,51 +65,36 @@ section {
                         color: $bgColor;
                     }
                 }
+                &:hover {
+                    background-color: rgba($color: #ffffff, $alpha: 0.9);
+                }
+                @media screen and (min-width:1024px) {
+                    padding: 1rem;
+                    font-size: 1.5rem;
+                }
             }
             .dropdown-menu {
                 .dropdown-item {
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        @media screen and (min-width: 768px) {
-            .search {
-                .searchInput {
-                    position: relative;
-                    padding: 2rem 10rem 2rem 1rem;
-                    width: 100%;
-                }
-                .btn {
-                    // @extend %btn;
-                    position: absolute;
-                    right: 15px;
-                    bottom: 10px;
-                    top: 27px;
-                    i {
-                        font-size: 3rem;
-                        padding: 0 2rem;
+                    font-size: 1.2rem;
+                    &:hover {
+                        background-color: lightgray;
                     }
                 }
             }
-            .sortNews {
-                .sort {
-                    padding: 2rem 3.5rem;
-                    border: none;
-                    font-size: 1.5rem;
-                    color: $btnColor;
-                    i {
-                        transform: rotate(90deg);
-                    }
-                    &:focus-within {
-                        i {
-                            color: $bgColor;
-                        }
-                    }
-                }
+            @media screen and (min-width:768px) {
                 .dropdown-menu {
                     .dropdown-item {
                         font-size: 1.5rem;
                     }
+                }
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .search {
+                .btn {
+                    top: 0%;
+                    bottom: 28%;
+                    right: 3%;
                 }
             }
         }
@@ -95,9 +109,6 @@ section {
         font-size: 1rem;
         border-radius: 0.5rem;
         border: none;
-        &:focus {
-            border: 1px solid blue;
-        }
     }
     @media screen and (min-width:768px) {
         label {
@@ -106,136 +117,146 @@ section {
         input,
         select,
         option {
-            padding: 2rem 1rem;
-            font-size: 1.5rem;
+            padding: 1rem 0.5rem;
+            font-size: 1.2rem;
             border-radius: 0.5rem;
             border: none;
-            &:focus {
-                border: 1px solid blue;
-            }
         }
     }
 }
 
-.news-wrapper {
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    .card {
-        border: none;
-        border-radius: 0.5rem;
-        width: 100%;
-        margin: 1.5rem 0rem;
-        box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem #e4e4e4;
-        a {
-            color: #000000;
-        }
-        .share {
-            position: relative;
-            i {
-                padding: 0.2rem;
-                font-size: 1.5rem;
-                color: $btnColor;
-                cursor: pointer;
-                &:last-child {
-                    &:active {
-                        transform: scale(0.7);
-                    }
-                }
-            }
-            .social {
-                position: absolute;
-                right: 0;
-                a {
-                    padding: 1rem;
-                    i {
-                        padding: 1rem;
-                        font-size: 2.5rem;
-                    }
-                    &:first-child {
-                        border-radius: 0.5rem 0 0 0.5rem;
-                    }
-                    &:last-child {
-                        border-radius: 0 0.5rem 0.5rem 0;
-                    }
-                }
+.wrapper {
+    // 0 to 600px
+    @extend %section;
+    .news-header {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        .newsLink {
+            color: $btnColor;
+            span {
+                font-size: 2rem;
+                margin-right: 0.6rem;
             }
         }
-        img {
-            min-height: 20rem;
-            max-height: 20rem;
-            border-radius: 0.5rem 0.5rem 0 0;
-        }
-        p {
-            padding-bottom: 4rem;
-        }
-        span {
-            font-size: 2rem;
-            font-weight: 600;
-        }
-        .badge {
-            margin-bottom: 2rem;
-            width: 10rem;
-            background-color: #E3E3E3;
-            border-radius: 0.5rem;
-        }
-        .article-date {
-            position: absolute;
-            bottom: 2%;
-            color: #707070;
-            i {
-                color: $btnColor;
-                margin-right: 1rem;
-            }
-        }
-        &:hover {
-            background-color: #ffffff;
-            box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem #e4e4e4;
+        @media screen and (min-width:600px) {
+            display: flex;
+            flex-flow: unset;
+            justify-content: space-between;
         }
     }
-    @media screen and (min-width:600px) {
+    .news-wrapper {
         display: flex;
-        flex-flow: wrap;
+        flex-flow: column;
+        @media screen and (min-width: 600px) {
+            display: flex;
+            flex-flow: wrap;
+        }
         .card {
-            width: 46%;
-            margin: 1.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            margin: 1.5rem 0rem;
+            box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem #e4e4e4;
+            @media screen and (min-width: 600px) {
+                width: 46%;
+                margin: 1.5rem 1.2rem;
+            }
+            @media screen and (min-width:1200px) {
+                width: 31.4%;
+                margin: 1.5rem 1rem;
+            }
+            a {
+                color: #000000;
+            }
             .share {
+                position: relative;
                 i {
                     padding: 0.2rem;
                     font-size: 1.5rem;
+                    color: $btnColor;
+                    cursor: pointer;
+                    &:last-child {
+                        &:active {
+                            transform: scale(0.7);
+                        }
+                    }
+                }
+                .social {
+                    position: absolute;
+                    right: 0;
+                    a {
+                        padding: 1rem;
+                        i {
+                            padding: 1rem;
+                            font-size: 2.5rem;
+                        }
+                        &:first-child {
+                            border-radius: 0.5rem 0 0 0.5rem;
+                        }
+                        &:last-child {
+                            border-radius: 0 0.5rem 0.5rem 0;
+                        }
+                    }
                 }
             }
-        }
-    }
-    @media screen and (min-width:768px) {
-        .card {
-            .share {
-                i {
-                    padding: 0.8rem;
-                    font-size: 2.5rem;
-                }
+            img {
+                min-height: 20rem;
+                max-height: 20rem;
+                border-radius: 0.5rem 0.5rem 0 0;
             }
             h2 {
-                // height: 18rem;
-                margin-bottom: 1rem;
+                min-height: 5rem;
+            }
+            p {
+                padding-bottom: 4rem;
+            }
+            span {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .badge {
+                margin-bottom: 2rem;
+                width: 8rem;
+                background-color: #E3E3E3;
+                border-radius: 0.5rem;
+            }
+            .article-date {
+                position: absolute;
+                bottom: 2%;
+                color: #707070;
+                i {
+                    color: $btnColor;
+                    margin-right: 1rem;
+                }
+            }
+            &:hover {
+                background-color: #ffffff;
+                box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem #e4e4e4;
+            }
+            @media screen and (min-width:600px) {
+                .share {
+                    i {
+                        padding: 0.2rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            @media screen and (min-width:768px) {
+                .share {
+                    i {
+                        padding: 0.8rem;
+                        font-size: 2.5rem;
+                    }
+                }
+                h2 {
+                    margin-bottom: 1rem;
+                    min-height: 12rem;
+                }
+                span {
+                    font-size: 1.6rem;
+                }
             }
         }
-    }
-    @media screen and (min-width:1200px) {
-        .card {
-            width: 31.4%;
-            margin: 1.5rem 1rem;
-            // h2 {
-            //     // height: 22rem;
-            //     margin-bottom: ;
-            // }
-        }
-    }
-    @media screen and (min-width:1600px) {
-        // .card {
-        //     // h2 {
-        //     //     height: 15rem;
-        //     // }
-        // }
     }
 }

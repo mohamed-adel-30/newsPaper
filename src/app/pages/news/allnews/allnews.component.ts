@@ -9,10 +9,18 @@ import {News} from '../news.model'
   styleUrls: ['./allnews.component.scss']
 })
 export class AllnewsComponent implements OnInit {
+
+  activePage:number = 0;
+
+  displayActivePage(activePageNumber:number){
+    this.activePage = activePageNumber
+  }
+
   allNews:any=[]
   anArticle;
   categories: any=[];
   displayNews:any=[];
+  filterNews:any=[]
   favorite:boolean=false
   share:boolean=false
   constructor(private news:NewsService) { }
@@ -29,7 +37,14 @@ export class AllnewsComponent implements OnInit {
       this.allNews.forEach(e => {
         this.anArticle = new News(e.sourceID,e.id,e.title,e.description,e.content,e.publishedAt,e.urlToImage,e.ShowOnHomePage)
         this.displayNews.push(this.anArticle)
+        this.filterNews.push(this.anArticle)
+
       });
+
+      this.displayNews.sort((a,b)=>{
+        b - a
+      })
+      console.log(this.displayNews);
 
 
 
@@ -56,8 +71,8 @@ export class AllnewsComponent implements OnInit {
             selectedCategory = e
           }
         });
-        this.allNews.forEach(element => {
-          if(element.sourceID === selectedCategory.id ){
+        this.filterNews.forEach(element => {
+          if(element.categoryId === selectedCategory.id ){
             filteredData.push(element)
           }
         });
@@ -99,7 +114,7 @@ export class AllnewsComponent implements OnInit {
         this.displayNews= result
       }
 
-        
+
 
 
 }

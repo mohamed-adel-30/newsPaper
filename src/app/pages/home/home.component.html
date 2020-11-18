@@ -9,13 +9,10 @@
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item first-carousel active">
-                <!-- <img src="../newspaper/src/assets/slider1.jpg" alt="First slide"> -->
             </div>
             <div class="carousel-item second-carousel">
-                <!-- <img src="Rectangle 2 copy.jpg" alt="Second slide"> -->
             </div>
             <div class="carousel-item third-carousel">
-                <!-- <img src="Rectangle 2 copy.jpg" alt="Second slide"> -->
             </div>
             <div class="overlay text-center d-flex ">
                 <div class="caption m-auto">
@@ -27,18 +24,25 @@
 
         </div>
         <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-            <img src="../../../assets/previous disabled@2x.png" alt="" srcset="">
-
+            <img class="prev" src="../../../assets/previous disabled@2x.png" alt="" srcset="">
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
             <img class="next" src="../../../assets/previous disabled@2x.png" alt="" srcset="">
             <span class="sr-only">Next</span>
         </a>
     </div>
 </section>
+
+
+
+
+
+<!-- *************** latest news section **************** -->
+
+
+
+
 <section class="wrapper news-section">
     <div class="news-header mb-5">
         <h1>Latest News</h1>
@@ -51,18 +55,23 @@
     <div class="row">
         <div class="news-wrapper">
 
-            <div *ngFor='let article of homeArticles' class="card">
+            <div *ngFor='let article of homeArticles  let i = index' class="card">
 
                 <img class="card-img-top" src="{{article.urlToImage}}" alt="">
 
                 <div class="share text-right m-3">
                     <!-- favorite icon -->
-                    <i [ngStyle]="{'display':favorite === true ? 'none':'inline'}" class="far fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
+                    <i [ngStyle]="{'display':favorite === true ? 'none':'inline'}" class="far fa-heart fa-3x" (click)="addToFavorite(article.id)"></i>
                     <i [ngStyle]="{'display':favorite === false ? 'none':'inline'}" class="fas fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
+
+                    <!-- /////////////////////////////////// -->
+
 
                     <!-- share icon -->
                     <i class="fas fa-share-alt fa-3x" (click)='share=!share'></i>
-                    <!-- <img class="share-icon" src="./../../../assets/ic_share_24px.svg" alt="" srcset=""> -->
+
+                    <!-- /////////////////////////////////// -->
+
                     <!-- social sharing -->
                     <div *ngIf='share' class="social">
                         <a class=" bg-primary text-white">
@@ -96,167 +105,11 @@
 
 </section>
 
+
+<!-- *************** helping section **************** -->
+
+
+
 <section class="helping">
-    <div class="overlay">
-
-
-        <div class="wrapper">
-            <div class="helping-header">
-                <h1 class="text-white">How we have helped</h1>
-                <p class="text-white">See how Al Foundation have promoted change locally and to the world
-                </p>
-            </div>
-            <div class="text-center Rotation-Divs">
-                <ul>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                    <li class="rotation">
-                        <div class="shape-content">
-                            <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                            <h3>Find place</h3>
-
-
-                            <p>+</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="Rotation-Divs-2  p-5">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 shapeContainer ">
-                        <div class="rotation ">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/pin (1).png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 shapeContainer ">
-                        <div class="rotation ">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/Show-Hide password.png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 shapeContainer ">
-                        <div class="rotation ">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/info.png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 shapeContainer ">
-                        <div class="rotation ">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/surface1.png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 shapeContainer ">
-                        <div class="rotation">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/arrow (2).png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 shapeContainer">
-                        <div class="rotation">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/Path 51794.png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 shapeContainer ">
-                        <div class="rotation shape-7">
-                            <div class="shape-content">
-                                <img src="../../../assets/helping/noun_services_2097593.png" alt="" srcset="">
-                                <h3>Find place</h3>
-
-
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-helping></app-helping>
 </section>

@@ -1,0 +1,143 @@
+@import '../../../shared/style/global.scss';
+.overlay {
+    width: 100%;
+    background-color: rgba(114, 113, 113, 0.5);
+    .wrapper {
+        padding: 5rem 0;
+        text-align: center;
+        .Rotation-Divs {
+            display: none
+        }
+        .Rotation-Divs-2,
+        .Rotation-Divs {
+            margin-bottom: 40px;
+            padding: 100px 0;
+            .shapeContainer {
+                margin-top: 5rem;
+            }
+            .rotation {
+                width: 120px;
+                height: 120px;
+                margin-top: 10px;
+                transform: rotate(45deg);
+                border: 3px solid #fff;
+                color: #fff;
+                display: inline-block;
+                text-align: center;
+                &:hover {
+                    background-color: $btnColor;
+                    border-color: $btnColor;
+                }
+            }
+            .shape-content {
+                text-align: center;
+                transform: rotate(-45deg);
+                h3 {
+                    font-size: 1.8rem;
+                    color: #ffffff;
+                    margin: 9%;
+                }
+                p {
+                    color: #ffffff;
+                    font-size: 2rem;
+                    font-weight: 800;
+                }
+                img {
+                    width: 30%;
+                }
+                .shape-7 {
+                    margin: none;
+                }
+            }
+        }
+        @media only screen and (min-width:768px) {
+            .Rotation-Divs-2 {
+                display: none;
+            }
+            .Rotation-Divs {
+                display: block;
+                ul:last-child {
+                    top: -9px;
+                }
+                .rotation {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 25px;
+                    text-align: center;
+                    .shape-content {
+                        h3 {
+                            margin: 4% 0;
+                        }
+                        img {
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (min-width:1024px) {
+            .Rotation-Divs {
+                ul:last-child {
+                    top: -9px;
+                }
+                .rotation {
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 30px;
+                    .shape-content {
+                        h3 {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (min-width:1200px) {
+            .Rotation-Divs {
+                ul:last-child {
+                    top: -9px;
+                }
+                .rotation {
+                    width: 175px;
+                    height: 175px;
+                    margin: 0 45px;
+                    .shape-content {
+                        text-align: center;
+                        padding-right: 5%;
+                        h3 {
+                            font-size: 2.6rem;
+                            margin-right: 0;
+                        }
+                        img {
+                            width: 35%;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (min-width:1441px) {
+            .Rotation-Divs {
+                ul:last-child {
+                    top: -9px;
+                }
+                .rotation {
+                    width: 200px;
+                    height: 200px;
+                    margin: 0 45px;
+                    .shape-content {
+                        text-align: center;
+                        padding-right: 8%;
+                        h3 {
+                            font-size: 2.6rem;
+                            // margin-right: 5%;
+                            margin-bottom: 2rem;
+                        }
+                        img {
+                            width: 35%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

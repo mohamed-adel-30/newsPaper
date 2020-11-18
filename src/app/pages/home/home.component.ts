@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
     let sortedArticals
     this.service.getAllNews().subscribe(data=>{
       this.allNews =data
+      console.log(data);
+
       this.allNews.forEach(element => {
         if(element.showOnHomepage === true && element.description !==""){
           this.homeArticles.push(element)
@@ -27,6 +29,19 @@ export class HomeComponent implements OnInit {
 
       });
     })
+  }
+
+  addToFavorite(id){
+    this.homeArticles.forEach(element => {
+
+      if(element.id === id){
+        console.log(element);
+
+        
+        this.favorite = !this.favorite
+      }
+    });
+
   }
 
 }

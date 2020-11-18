@@ -15,6 +15,7 @@ $bgColor:#068997; //btn style
     border-radius: 0.5rem;
     &:hover {
         background-color: $btnColor;
+        // transition: 0.3s;
     }
 }
 
@@ -24,6 +25,18 @@ $bgColor:#068997; //btn style
     -o-transform: $deg;
     -webkit-transform: $deg;
     transform: $deg;
+}
+
+%navToast {
+    visibility: hidden;
+    color: #ffffff;
+    font-size: 1rem;
+    background-color: rgba(30, 30, 30, 0.4);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: -1rem;
+    bottom: -2.5rem;
 }
 
 //carousel images
