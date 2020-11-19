@@ -263,16 +263,28 @@
                         li {
                             background-color: #ffff;
                             border-radius: 5px;
-                            margin: 10px;
-                            padding: 1rem 1.5rem;
+                            margin: 0.5rem;
+                            padding: 0.4rem 0.8rem;
                             &:hover {
                                 background-color: $btnColor !important;
+                                span,
+                                a {
+                                    background-color: transparent;
+                                }
+                            }
+                            a {
+                                padding: 0;
                             }
                             span {
-                                font-size: 1.5rem;
+                                font-size: 1rem;
+                                &:hover {
+                                    background-color: transparent;
+                                    color: #ffffff;
+                                    border: none;
+                                }
                             }
                             .show-for-sr {
-                                font-size: 1.5rem;
+                                font-size: 1rem;
                             }
                             .pagination-previous {
                                 padding: 0;
@@ -282,9 +294,56 @@
                             }
                         }
                         .current {
-                            padding: 1rem 1.5rem;
+                            padding: 0.4rem 0.8rem;
                             background-color: $btnColor;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            
+            @media screen and (min-width:728px) {
+                .my-pagination {
+                     ::ng-deep {
+                        .ngx-pagination {
+                            li {
+                                background-color: #ffff;
+                                border-radius: 5px;
+                                margin: 10px;
+                                padding: 0.6rem 1.2rem;
+                                &:hover {
+                                    background-color: $btnColor !important;
+                                    span,
+                                    a {
+                                        background-color: transparent;
+                                    }
+                                }
+                                a {
+                                    padding: 0;
+                                }
+                                span {
+                                    font-size: 1.5rem;
+                                    &:hover {
+                                        background-color: transparent;
+                                        color: #ffffff;
+                                        border: none;
+                                    }
+                                }
+                                .show-for-sr {
+                                    font-size: 1rem;
+                                }
+                                .pagination-previous {
+                                    padding: 0;
+                                    a {
+                                        display: inline;
+                                    }
+                                }
+                            }
+                            .current {
+                                padding: 0.6rem 1.2rem;
+                                background-color: $btnColor;
+                                font-size: 1rem;
+                            }
                         }
                     }
                 }

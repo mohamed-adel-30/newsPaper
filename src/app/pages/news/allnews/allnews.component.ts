@@ -39,8 +39,6 @@ export class AllnewsComponent implements OnInit {
   getNews() {
     this.news.getAllnews().subscribe(data => {
       this.allNews = data
-
-
       this.allNews.forEach(e => {
         this.anArticle = new News(e.sourceID, e.id, e.title, e.description, e.content, e.publishedAt, e.urlToImage, e.ShowOnHomePage)
         this.displayNews.push(this.anArticle)
@@ -105,7 +103,6 @@ export class AllnewsComponent implements OnInit {
   getCategories() {
     this.news.getAllCategories().subscribe(data => {
       this.categories = data
-      console.log(this.categories);
 
     })
   }
@@ -128,7 +125,6 @@ export class AllnewsComponent implements OnInit {
       }
     });
     this.displayNews = filteredData
-    console.log(this.displayNews);
   }
 
 

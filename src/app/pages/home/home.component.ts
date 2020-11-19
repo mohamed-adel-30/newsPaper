@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
       });
 
       this.homeArticles.sort(this.sortFunction)
-      console.log(this.homeArticles);
 
     })
   }

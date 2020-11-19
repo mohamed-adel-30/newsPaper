@@ -42,7 +42,6 @@ export class NewsDetailsComponent implements OnInit {
     this.news.getAnArticle(this.id).subscribe(article => {
       this.article = article
       this.catID = this.article[0].sourceID
-      console.log(this.article[0].sourceID);
       this.getRelatedTopics()
 
 
@@ -65,7 +64,6 @@ export class NewsDetailsComponent implements OnInit {
      this.news.getRelatedTopics(this.catID).subscribe(related => {
         this.relatedTopics = related
         this.relatedTopicsDisplayed = this.relatedTopics.splice(1,3)
-        console.log(related);
 
       })
   }
