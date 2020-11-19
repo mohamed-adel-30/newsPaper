@@ -38,7 +38,7 @@ nav {
         justify-content: flex-end;
         align-items: center;
         margin-left: auto;
-        // width: 60%;
+        // search icon style
         .search {
             width: 40%;
             margin-right: 0.5rem;
@@ -84,6 +84,47 @@ nav {
             &:hover {
                 .toats {
                     visibility: visible;
+                }
+            }
+            @media screen and (min-width:768px) {
+                margin-right: 1rem;
+                i {
+                    font-size: 1.8rem;
+                    padding: 1rem;
+                }
+                .search-input {
+                    input {
+                        padding: 1.5rem;
+                        font-size: 1.5rem;
+                    }
+                    .hidden {
+                        top: -7%;
+                    }
+                }
+                .toats {
+                    padding: 0.5rem 1rem;
+                    bottom: -3rem;
+                }
+            }
+            @media screen and (min-width:1024px) {
+                margin-right: 2rem;
+                i {
+                    font-size: 2rem;
+                }
+                .search-input {
+                    .hidden {
+                        top: -12%;
+                    }
+                }
+            }
+            @media screen and (min-width:1200px) {
+                i {
+                    font-size: 2rem;
+                }
+                .search-input {
+                    .hidden {
+                        top: -12%;
+                    }
                 }
             }
         }
@@ -146,20 +187,6 @@ nav {
                 transform: translate3d(-105px, 25px, 0px) !important;
                 a {
                     font-size: 1rem;
-                }
-                 :last-child {
-                    color: $btnColor;
-                    i {
-                        padding-left: 1rem;
-                    }
-                    &:hover {
-                        color: $bgColor;
-                        i {
-                            color: $bgColor;
-                            background-color: transparent;
-                            transform: scaleX(1.2);
-                        }
-                    }
                 }
             }
             .toats {
@@ -252,7 +279,7 @@ nav {
                     }
                 }
                 .dropdown-menu {
-                    transform: translate3d(-145px, 35px, 0px) !important;
+                    transform: translate3d(-145px, 44px, 0px) !important;
                     a {
                         font-size: 1.5rem;
                         i {
@@ -278,6 +305,7 @@ nav {
                     }
                 }
                 .dropdown-menu {
+                    transform: translate3d(-145px, 44px, 0px) !important;
                     a {
                         font-size: 1.5rem;
                     }

@@ -13,6 +13,11 @@ const routes: Routes = [
   {
     path:'details/:id',
     component:NewsDetailsComponent
+  },
+  {
+    path:'details/:id/:id',
+    redirectTo:"details/:id",
+    pathMatch:'full'
   }
 ];
 

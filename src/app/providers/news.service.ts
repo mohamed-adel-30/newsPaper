@@ -18,6 +18,16 @@ export class NewsService {
     return this.http.get(url)
   }
 
+  getAnArticle(id){
+    const url = this.config.url+this.config.getAnArticle.replace("{0}",id)
+    return this.http.get(url)
+  }
+
+  getRelatedTopics(catId){
+    const url = this.config.url+this.config.getRelatedTobics.replace("{0}",catId)
+    return this.http.get(url)
+  }
+
   getAllCategories(){
     const url = this.config.url+this.config.getCategories
     return this.http.get(url)

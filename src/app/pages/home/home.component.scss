@@ -212,6 +212,9 @@
             }
             .share {
                 position: relative;
+                .favorite {
+                    display: none;
+                }
                 i {
                     padding: 0.2rem;
                     font-size: 1.5rem;
@@ -292,7 +295,7 @@
                 }
                 h2 {
                     margin-bottom: 1rem;
-                    min-height: 12rem;
+                    min-height: 10rem;
                 }
                 span {
                     font-size: 1.6rem;

@@ -6,19 +6,21 @@
         padding: 5rem 0;
         text-align: center;
         .Rotation-Divs {
-            display: none
-        }
-        .Rotation-Divs-2,
-        .Rotation-Divs {
             margin-bottom: 40px;
             padding: 100px 0;
             .shapeContainer {
                 margin-top: 5rem;
             }
+            ul {
+                display: flex;
+                flex-flow: column;
+                text-align: center;
+                align-items: center;
+            }
             .rotation {
                 width: 120px;
                 height: 120px;
-                margin-top: 10px;
+                margin: 3rem 0;
                 transform: rotate(45deg);
                 border: 3px solid #fff;
                 color: #fff;
@@ -51,11 +53,10 @@
             }
         }
         @media only screen and (min-width:768px) {
-            .Rotation-Divs-2 {
-                display: none;
-            }
             .Rotation-Divs {
-                display: block;
+                ul {
+                    display: unset;
+                }
                 ul:last-child {
                     top: -9px;
                 }
@@ -98,9 +99,9 @@
                     top: -9px;
                 }
                 .rotation {
-                    width: 175px;
-                    height: 175px;
-                    margin: 0 45px;
+                    width: 160px;
+                    height: 160px;
+                    margin: 0px 38px;
                     .shape-content {
                         text-align: center;
                         padding-right: 5%;
@@ -121,8 +122,8 @@
                     top: -9px;
                 }
                 .rotation {
-                    width: 200px;
-                    height: 200px;
+                    width: 175px;
+                    height: 175px;
                     margin: 0 45px;
                     .shape-content {
                         text-align: center;

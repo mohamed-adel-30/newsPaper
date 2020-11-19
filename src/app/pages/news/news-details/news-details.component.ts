@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
+import { Router } from "@angular/router";
+
 import { NewsService } from '../../../providers/news.service'
 
 @Component({
@@ -8,36 +10,23 @@ import { NewsService } from '../../../providers/news.service'
   styleUrls: ['./news-details.component.scss']
 })
 export class NewsDetailsComponent implements OnInit {
-  id
-  article
-  allNews
+  indx;
+  article;
+  allNews;
   categories: any = []
   favorite = false;
   share = false;
-  relatedTobics: any = [];
+  relatedTopics: any = [];
+  relatedTopicsDisplayed;
   categoryName: any;
-  constructor(private router: ActivatedRoute, private news: NewsService) { }
+  id: any;
+  catID: any;
+  constructor(private ActivateRouter: ActivatedRoute, private news: NewsService, private router: Router) { }
 
   ngOnInit(): void {
-
-
-    this.id = this.router.snapshot.paramMap.get('id')
-    this.news.getAllnews().subscribe(a => {
-      this.allNews = a
-      this.allNews.forEach(element => {
-        if (element.id == this.id) {
-          this.article = element
-        }
-        if(element.sourceID == this.article.sourceID){
-              this.relatedTobics.push(element)
-          }
-      });
-      console.log(this.relatedTobics);
-
-      this.getCategories()
-    })
-
-
+    this.id = this.ActivateRouter.snapshot.paramMap.get('id')
+    this.getAnArticle()
+    this.getCategories()
   }
 
 
@@ -45,11 +34,49 @@ export class NewsDetailsComponent implements OnInit {
 
 
 
+
+// get news details //
+
+
+  getAnArticle() {
+    this.news.getAnArticle(this.id).subscribe(article => {
+      this.article = article
+      this.catID = this.article[0].sourceID
+      console.log(this.article[0].sourceID);
+      this.getRelatedTopics()
+
+
+    })
+  }
+
+
+
+
+  reload(id){
+    location.href =`details/${id}`
+  }
+
+
+
+
+  // get related topics //
+
+  getRelatedTopics(){
+     this.news.getRelatedTopics(this.catID).subscribe(related => {
+        this.relatedTopics = related
+        this.relatedTopicsDisplayed = this.relatedTopics.splice(1,3)
+        console.log(related);
+
+      })
+  }
+
+  // get category Name //
+
   getCategories() {
     this.news.getAllCategories().subscribe(cats => {
       this.categories = cats
       this.categories.find(element => {
-        if (element.id == this.article.sourceID) {
+        if (element.id == this.article[0].sourceID) {
           this.categoryName = element.name
         }
 

@@ -8,11 +8,11 @@
         </nav>
         <h1>News Details</h1>
         <div *ngIf='article , categoryName' class="card">
-            <img class="card-img-top img-fluid" src="{{article.urlToImage}}" alt="">
+            <img class="card-img-top img-fluid" src="{{article[0].urlToImage}}" alt="">
             <div class="card-body p-5">
                 <span>{{categoryName}}</span>
                 <div class="articleHeader ">
-                    <h2 class="card-title text-dark">{{article.title}}</h2>
+                    <h2 class="card-title text-dark">{{article[0].title}}</h2>
                     <div class="share text-right">
                         <!-- favorite icon -->
                         <i [ngStyle]="{'display':favorite === true ? 'none':'inline'}" class="far fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
@@ -36,45 +36,32 @@
 
                     </div>
                 </div>
-                <p class="card-text">{{article.content}}</p>
+                <p class="card-text">{{article[0].content}}</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<section class="related-tobics">
+
+<!-- related topics section -->
+
+
+<section class="related-topics">
     <div class="wrapper">
-        <h1>related tobics</h1>
-        <div class="tobics-container">
+        <h1>Related Topics</h1>
+        <div class="topics-container">
 
-            <div class="related-articles" *ngIf="article">
+            <div class="related-articles" *ngFor="let article of relatedTopicsDisplayed let i = index">
                 <img class="img-fluid" src="{{article.urlToImage}}" alt="">
                 <div class="relatedContent">
-                    <span>Category</span>
-                    <h2>Next Step Of IOT</h2>
+                    <span>{{categoryName}}</span>
+                    <h2 class="my-3">{{article.title}}</h2>
 
-                    <a class="LinkHov" href="#">View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                    <a class="LinkHov" (click)='reload(article.id)' [routerLink]='article.id'>View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
                 </div>
             </div>
-            <div class="related-articles" *ngIf="article">
-                <img class="img-fluid" src="{{article.urlToImage}}" alt="">
-                <div class="relatedContent">
-                    <span>Category</span>
-                    <h2>Next Step Of IOT</h2>
 
-                    <a class="LinkHov" href="#">View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
-                </div>
-            </div>
-            <div class="related-articles" *ngIf="article">
-                <img class="img-fluid" src="{{article.urlToImage}}" alt="">
-                <div class="relatedContent">
-                    <span>Category</span>
-                    <h2>Next Step Of IOT</h2>
-
-                    <a class="LinkHov" href="#">View Details <span class="ArrowHov "><i class="fas fa-long-arrow-alt-right"></i></span></a>
-                </div>
-            </div>
         </div>
     </div>
 </section>

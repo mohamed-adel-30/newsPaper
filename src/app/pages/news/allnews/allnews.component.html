@@ -24,9 +24,9 @@
                 <div class="form-group d-flex flex-column">
                     <label for="category">Category</label>
                     <select #categoryFilter name="" (change)="searchByCategory(categoryFilter)" id="" aria-placeholder="select category">
-                      <option value="">select category</option>
-                      <option *ngFor="let category of categories">{{category.name}}</option>
-                    </select>
+            <option value="">select category</option>
+            <option *ngFor="let category of categories">{{category.name}}</option>
+          </select>
                 </div>
             </div>
             <div class="col-12 order-1
@@ -41,12 +41,12 @@
 
                 <div class="form-group sortNews dropdown open">
                     <a class="sort" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Sort by <i class="fas fa-exchange-alt fa-1x"></i>
-                    </a>
+            Sort by <i class="fas fa-exchange-alt fa-1x"></i>
+          </a>
                     <div class="dropdown-menu" aria-labelledby="triggerId">
-                        <button class="dropdown-item" href="#">A to Z</button>
+                        <button class="dropdown-item" (click)='sortAsc()'>A to Z</button>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" href="#">Z to A</button>
+                        <button class="dropdown-item" (click)='sortDesc()'>Z to A</button>
                     </div>
                 </div>
             </div>
@@ -54,19 +54,19 @@
         <div class="news-wrapper">
 
 
-            <div *ngFor='let article of displayNews' class="card">
+            <div *ngFor='let article of displayNews | paginate: { itemsPerPage: 9, currentPage: p }; let i = index' class="card">
 
                 <img class="card-img-top" src="{{article.img}}" alt="">
 
                 <div class="share text-right m-3">
                     <!-- favorite icon -->
-                    <i [ngStyle]="{'display':favorite === true ? 'none':'inline'}" class="far fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
-                    <i [ngStyle]="{'display':favorite === false ? 'none':'inline'}" class="fas fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
+                    <i class="far fa-heart fa-3x" (click)="fav($event)"></i>
+                    <i class="favorite fas fa-heart fa-3x" (click)="unfav($event)"></i>
 
                     <!-- share icon -->
-                    <i class="fas fa-share-alt fa-3x" (click)='share=!share'></i>
+                    <i class="fas fa-share-alt fa-3x" (click)='showSocial($event)'></i>
                     <!-- social sharing -->
-                    <div *ngIf='share' class="social">
+                    <div class="social" style="display: none;">
                         <a class=" bg-primary text-white">
                             <i class="fab text-white fa-facebook-f"></i>
                         </a>
@@ -93,17 +93,11 @@
             </div>
         </div>
     </div>
-    <!-- <div class="row">
-        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-            <span><strong>Current Active Page = </strong> {{activePage}}</span>
+
+    <div class="w-50 m-auto text-center pb-5" *ngIf="displayNews.length !== 0">
+        <div class="pagination">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-            <div class="float-right">
-                <app-pagination [totalRecords]="displayNews.length" [recordsPerPage]="5" (onPageChange)="displayActivePage($event)"></app-pagination>
-            </div>
-        </div>
-    </div> -->
 
 </section>

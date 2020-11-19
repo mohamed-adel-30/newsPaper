@@ -61,19 +61,19 @@
 
                 <div class="share text-right m-3">
                     <!-- favorite icon -->
-                    <i [ngStyle]="{'display':favorite === true ? 'none':'inline'}" class="far fa-heart fa-3x" (click)="addToFavorite(article.id)"></i>
-                    <i [ngStyle]="{'display':favorite === false ? 'none':'inline'}" class="fas fa-heart fa-3x" (click)="this.favorite=!this.favorite"></i>
+                    <i class="far fa-heart fa-3x" (click)="fav($event)"></i>
+                    <i class="favorite fas fa-heart fa-3x" (click)="unfav($event)"></i>
 
                     <!-- /////////////////////////////////// -->
 
 
                     <!-- share icon -->
-                    <i class="fas fa-share-alt fa-3x" (click)='share=!share'></i>
+                    <i class="fas fa-share-alt fa-3x" (click)='showSocial($event)'></i>
 
                     <!-- /////////////////////////////////// -->
 
                     <!-- social sharing -->
-                    <div *ngIf='share' class="social">
+                    <div class="social" style="display: none;">
                         <a class=" bg-primary text-white">
                             <i class="fab text-white fa-facebook-f"></i>
                         </a>

@@ -17,3 +17,4 @@
 [1118/170823.381:ERROR:exception_snapshot_win.cc(99)] thread ID 12812 not found in process
 [1118/170823.381:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits64>]: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
 [1118/170823.381:ERROR:process_info.cc(551)] ReadProcessData failed
+[1119/100558.637:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

@@ -1,262 +1,280 @@
-@import '../../../shared/style/global.scss';
-section {
-    background-color: #EFEFEF;
-    .row {
-        padding-top: 5rem;
-        align-items: flex-end;
-        .search {
-            .searchInput {
-                position: relative;
-                width: 100%;
-            }
-            .btn {
-                @extend %btn;
-                position: absolute;
-                bottom: 22%;
-                right: 4%;
-                top: 0;
-                i {
-                    font-size: 1.5rem;
-                    padding: 0 1rem;
-                }
-            }
-            @media screen and (min-width: 768px) {
-                .btn {
-                    bottom: 21%;
-                    right: 2%;
-                    i {
-                        font-size: 1.5rem;
-                        padding: 0 2rem;
+        @import '../../../shared/style/global.scss';
+        section {
+            background-color: #EFEFEF;
+            .row {
+                padding-top: 5rem;
+                align-items: flex-end;
+                .search {
+                    .searchInput {
+                        position: relative;
+                        width: 100%;
                     }
-                }
-            }
-            @media screen and (min-width:1024px) {
-                .searchInput {
-                    padding-right: 8rem;
-                }
-                .btn {
-                    top: 0%;
-                    bottom: 21%;
-                    right: 5%;
-                }
-            }
-            @media screen and (min-width:1200px) {
-                .btn {
-                    top: 0%;
-                    bottom: 28%;
-                    right: 3%;
-                }
-            }
-        }
-        .sortNews {
-            text-align: center;
-            .sort {
-                padding: 0.7rem;
-                border: none;
-                font-size: 1.2rem;
-                color: $btnColor;
-                border-radius: 0.5rem;
-                transition: all 1s ease;
-                i {
-                    transform: rotate(90deg);
-                }
-                &:focus-within {
-                    i {
-                        color: $bgColor;
-                    }
-                }
-                &:hover {
-                    background-color: rgba($color: #ffffff, $alpha: 0.9);
-                }
-                @media screen and (min-width:1024px) {
-                    padding: 1rem;
-                    font-size: 1.5rem;
-                }
-            }
-            .dropdown-menu {
-                .dropdown-item {
-                    font-size: 1.2rem;
-                    &:hover {
-                        background-color: lightgray;
-                    }
-                }
-            }
-            @media screen and (min-width:768px) {
-                .dropdown-menu {
-                    .dropdown-item {
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-        }
-        @media screen and (min-width:1200px) {
-            .search {
-                .btn {
-                    top: 0%;
-                    bottom: 28%;
-                    right: 3%;
-                }
-            }
-        }
-    }
-    label {
-        font-size: 1.2rem;
-    }
-    input,
-    select,
-    option {
-        padding: 1rem 1rem;
-        font-size: 1rem;
-        border-radius: 0.5rem;
-        border: none;
-    }
-    @media screen and (min-width:768px) {
-        label {
-            font-size: 1.5rem;
-        }
-        input,
-        select,
-        option {
-            padding: 1rem 0.5rem;
-            font-size: 1.2rem;
-            border-radius: 0.5rem;
-            border: none;
-        }
-    }
-}
-
-.wrapper {
-    // 0 to 600px
-    @extend %section;
-    .news-header {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        .newsLink {
-            color: $btnColor;
-            span {
-                font-size: 2rem;
-                margin-right: 0.6rem;
-            }
-        }
-        @media screen and (min-width:600px) {
-            display: flex;
-            flex-flow: unset;
-            justify-content: space-between;
-        }
-    }
-    .news-wrapper {
-        display: flex;
-        flex-flow: column;
-        @media screen and (min-width: 600px) {
-            display: flex;
-            flex-flow: wrap;
-        }
-        .card {
-            border: none;
-            border-radius: 0.5rem;
-            width: 100%;
-            margin: 1.5rem 0rem;
-            box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem #e4e4e4;
-            @media screen and (min-width: 600px) {
-                width: 46%;
-                margin: 1.5rem 1.2rem;
-            }
-            @media screen and (min-width:1200px) {
-                width: 31.4%;
-                margin: 1.5rem 1rem;
-            }
-            a {
-                color: #000000;
-            }
-            .share {
-                position: relative;
-                i {
-                    padding: 0.2rem;
-                    font-size: 1.5rem;
-                    color: $btnColor;
-                    cursor: pointer;
-                    &:last-child {
-                        &:active {
-                            transform: scale(0.7);
-                        }
-                    }
-                }
-                .social {
-                    position: absolute;
-                    right: 0;
-                    a {
-                        padding: 1rem;
+                    .btn {
+                        @extend %btn;
+                        position: absolute;
+                        bottom: 22%;
+                        right: 4%;
+                        top: 0;
                         i {
+                            font-size: 1.5rem;
+                            padding: 0 1rem;
+                        }
+                    }
+                    @media screen and (min-width: 768px) {
+                        .btn {
+                            bottom: 21%;
+                            right: 2%;
+                            i {
+                                font-size: 1.5rem;
+                                padding: 0 2rem;
+                            }
+                        }
+                    }
+                    @media screen and (min-width:1024px) {
+                        .searchInput {
+                            padding-right: 8rem;
+                        }
+                        .btn {
+                            top: 0%;
+                            bottom: 21%;
+                            right: 4.5%;
+                        }
+                    }
+                    @media screen and (min-width:1365px) {
+                        .btn {
+                            top: 0%;
+                            bottom: 22%;
+                            right: 3.5%;
+                        }
+                    }
+                }
+                .sortNews {
+                    text-align: center;
+                    .sort {
+                        padding: 0.7rem;
+                        border: none;
+                        font-size: 1.2rem;
+                        color: $btnColor;
+                        border-radius: 0.5rem;
+                        transition: all 1s ease;
+                        i {
+                            transform: rotate(90deg);
+                        }
+                        &:focus-within {
+                            i {
+                                color: $bgColor;
+                            }
+                        }
+                        &:hover {
+                            background-color: rgba($color: #ffffff, $alpha: 0.9);
+                        }
+                        @media screen and (min-width:1024px) {
                             padding: 1rem;
-                            font-size: 2.5rem;
+                            font-size: 1.5rem;
                         }
-                        &:first-child {
-                            border-radius: 0.5rem 0 0 0.5rem;
+                    }
+                    .dropdown-menu {
+                        .dropdown-item {
+                            font-size: 1.2rem;
+                            &:hover {
+                                background-color: lightgray;
+                            }
                         }
-                        &:last-child {
-                            border-radius: 0 0.5rem 0.5rem 0;
+                    }
+                    @media screen and (min-width:768px) {
+                        .dropdown-menu {
+                            .dropdown-item {
+                                font-size: 1.5rem;
+                            }
                         }
                     }
                 }
             }
-            img {
-                min-height: 20rem;
-                max-height: 20rem;
-                border-radius: 0.5rem 0.5rem 0 0;
-            }
-            h2 {
-                min-height: 5rem;
-            }
-            p {
-                padding-bottom: 4rem;
-            }
-            span {
+            label {
                 font-size: 1.2rem;
-                font-weight: 500;
             }
-            .badge {
-                margin-bottom: 2rem;
-                width: 8rem;
-                background-color: #E3E3E3;
+            input,
+            select,
+            option {
+                padding: 1rem 1rem;
+                font-size: 1rem;
                 border-radius: 0.5rem;
-            }
-            .article-date {
-                position: absolute;
-                bottom: 2%;
-                color: #707070;
-                i {
-                    color: $btnColor;
-                    margin-right: 1rem;
-                }
-            }
-            &:hover {
-                background-color: #ffffff;
-                box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem #e4e4e4;
-            }
-            @media screen and (min-width:600px) {
-                .share {
-                    i {
-                        padding: 0.2rem;
-                        font-size: 1.5rem;
-                    }
-                }
+                border: none;
             }
             @media screen and (min-width:768px) {
-                .share {
-                    i {
-                        padding: 0.8rem;
-                        font-size: 2.5rem;
-                    }
+                label {
+                    font-size: 1.5rem;
                 }
-                h2 {
-                    margin-bottom: 1rem;
-                    min-height: 12rem;
-                }
-                span {
-                    font-size: 1.6rem;
+                input,
+                select,
+                option {
+                    padding: 1rem 0.5rem;
+                    font-size: 1.2rem;
+                    border-radius: 0.5rem;
+                    border: none;
                 }
             }
         }
-    }
-}
+        
+        .wrapper {
+            // 0 to 600px
+            @extend %section;
+            .news-header {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                .newsLink {
+                    color: $btnColor;
+                    span {
+                        font-size: 2rem;
+                        margin-right: 0.6rem;
+                    }
+                }
+                @media screen and (min-width:600px) {
+                    display: flex;
+                    flex-flow: unset;
+                    justify-content: space-between;
+                }
+            }
+            .news-wrapper {
+                display: flex;
+                flex-flow: column;
+                @media screen and (min-width: 600px) {
+                    display: flex;
+                    flex-flow: wrap;
+                }
+                .card {
+                    border: none;
+                    border-radius: 0.5rem;
+                    width: 100%;
+                    margin: 1.5rem 0rem;
+                    box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem #e4e4e4;
+                    @media screen and (min-width: 600px) {
+                        width: 46%;
+                        margin: 1.5rem 1.2rem;
+                    }
+                    @media screen and (min-width:1200px) {
+                        width: 31.3%;
+                        margin: 1.5rem 1rem;
+                    }
+                    a {
+                        color: #000000;
+                    }
+                    .share {
+                        position: relative;
+                        text-align: right;
+                        .favorite {
+                            display: none;
+                        }
+                        i {
+                            padding: 0.2rem;
+                            font-size: 1.5rem;
+                            color: $btnColor;
+                            cursor: pointer;
+                            &:last-child {
+                                &:active {
+                                    transform: scale(0.7);
+                                }
+                            }
+                        }
+                        .social {
+                            position: absolute;
+                            right: 0;
+                            a {
+                                padding: 1rem;
+                                i {
+                                    padding: 1rem;
+                                    font-size: 2.5rem;
+                                }
+                                &:first-child {
+                                    border-radius: 0.5rem 0 0 0.5rem;
+                                }
+                                &:last-child {
+                                    border-radius: 0 0.5rem 0.5rem 0;
+                                }
+                            }
+                        }
+                    }
+                    img {
+                        min-height: 20rem;
+                        max-height: 20rem;
+                        border-radius: 0.5rem 0.5rem 0 0;
+                    }
+                    h2 {
+                        min-height: 5rem;
+                    }
+                    p {
+                        padding-bottom: 4rem;
+                    }
+                    span {
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                    }
+                    .badge {
+                        margin-bottom: 2rem;
+                        width: 8rem;
+                        background-color: #E3E3E3;
+                        border-radius: 0.5rem;
+                    }
+                    .article-date {
+                        position: absolute;
+                        bottom: 2%;
+                        color: #707070;
+                        i {
+                            color: $btnColor;
+                            margin-right: 1rem;
+                        }
+                    }
+                    &:hover {
+                        background-color: #ffffff;
+                        box-shadow: 0.6rem 0.6rem 0.6rem 0.6rem #e4e4e4;
+                    }
+                    @media screen and (min-width:600px) {
+                        .share {
+                            i {
+                                padding: 0.2rem;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                    @media screen and (min-width:768px) {
+                        .share {
+                            i {
+                                padding: 0.8rem;
+                                font-size: 2.5rem;
+                            }
+                        }
+                        h2 {
+                            margin-bottom: 1rem;
+                            min-height: 10rem;
+                        }
+                        span {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+            // pagination-controls {
+            //     pagination-template {
+            //         .ngx-pagination .current {
+            //             background: green;
+            //             padding: 1rem;
+            //         }
+            //     }
+            // }
+            // ul.ngx-pagination {
+            //     li.current {
+            //         background: green !important;
+            //         padding: 1rem;
+            //     }
+            // }
+        }
+        
+        pagination-controls {
+            pagination-template {
+                .ngx-pagination .current {
+                    background: green !important;
+                    padding: 1rem;
+                }
+            }
+        }

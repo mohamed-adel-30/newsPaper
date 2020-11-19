@@ -84,9 +84,10 @@ section {
     }
 }
 
-.related-tobics {
+// --------- related topics style ---------- //
+.related-topics {
     .wrapper {
-        .tobics-container {
+        .topics-container {
             display: flex;
             flex-flow: column;
             @media screen and (min-width: 768px) {
@@ -97,23 +98,35 @@ section {
                 width: 100%;
                 position: relative;
                 @media screen and (min-width: 768px) {
+                    width: 48.4%;
+                    margin: 1rem 1rem;
+                }
+                @media screen and (min-width: 1024px) {
                     width: 31.4%;
                     margin: 1rem 1rem;
                 }
                 img {
                     width: 100%;
                     object-fit: fill;
-                    min-height: 40rem;
+                    height: 45rem;
                     border-radius: 0.5rem;
                 }
                 .relatedContent {
-                    background-color: rgba(255, 255, 255, 0.9);
+                    background-color: rgba(255, 255, 255, 0.8);
                     border-radius: 5px;
                     position: absolute;
+                    max-height: 22rem;
+                    min-height: 22rem;
                     padding: 3rem;
                     bottom: 3%;
                     right: 2%;
                     left: 2%;
+                    h2 {
+                        font-size: 1.8rem;
+                        @media screen and (min-width: 768px) {
+                            font-size: 1.8rem;
+                        }
+                    }
                 }
                 .LinkHov {
                     text-decoration: none;

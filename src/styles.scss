@@ -34,9 +34,32 @@ body {
             }
         }
     }
+    .paginator {
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+    }
+    .paginator>>>.ngx-pagination .current {
+        background: green !important;
+        border-radius: 4px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+    .paginator>>>.ngx-pagination a:hover,
+    .ngx-pagination button:hover {
+        background: #d4d4d4;
+        border-radius: 3px;
+        padding-left: 9px;
+        padding-right: 9px;
+        text-decoration: none;
+    }
+    .paginator>>>.ngx-pagination a:focus,
+    .ngx-pagination button:focus {
+        outline: none;
+        background: #d4d4d4;
+    }
     h2 {
         //from 0 to 600px
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 600;
         @media screen and (min-width: 600px) {
             font-size: 2rem;
@@ -45,10 +68,10 @@ body {
             font-size: 2rem;
         }
         @media screen and(min-width:992px) {
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
         @media screen and(min-width:1200px) {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
     }
     p {
@@ -96,3 +119,8 @@ body {
         margin: 0 auto;
     }
 }
+
+
+/* Importing Bootstrap SCSS file. */
+
+@import '~bootstrap/scss/bootstrap';

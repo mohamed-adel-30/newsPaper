@@ -9,18 +9,17 @@ import { HomeService } from '../../providers/home.service';
 export class HomeComponent implements OnInit {
   allNews:any=[]
   homeArticles: any=[];
-  favorite:boolean=false
-  share:boolean=false
+  anArticle;
+
+
   constructor(private service:HomeService) { }
 
   ngOnInit(): void {
     this.getHomeNews()
   }
   getHomeNews(){
-    let sortedArticals
     this.service.getAllNews().subscribe(data=>{
       this.allNews =data
-      console.log(data);
 
       this.allNews.forEach(element => {
         if(element.showOnHomepage === true && element.description !==""){
@@ -28,19 +27,38 @@ export class HomeComponent implements OnInit {
         }
 
       });
+
+      this.homeArticles.sort(this.sortFunction)
+      console.log(this.homeArticles);
+
     })
   }
 
-  addToFavorite(id){
-    this.homeArticles.forEach(element => {
 
-      if(element.id === id){
-        console.log(element);
 
-        
-        this.favorite = !this.favorite
-      }
-    });
+  sortFunction(a, b) {
+    var dateA = new Date(a.publishedAt).getTime();
+    var dateB = new Date(b.publishedAt).getTime();
+    return dateA < dateB ? 1 : -1;
+  };
+
+  unfav(e) {
+    e.target.style.display = "none";
+    e.target.previousSibling.style.display = "inline";
+  }
+
+  fav(e) {
+    e.target.style.display = "none";
+    e.target.nextSibling.style.display = "inline";
+  }
+
+
+  showSocial(e) {
+    if (e.target.nextSibling.style.display == "none") {
+      e.target.nextSibling.style.display = "flex"
+    } else if (e.target.nextSibling.style.display == "flex") {
+      e.target.nextSibling.style.display = "none"
+    }
 
   }
 

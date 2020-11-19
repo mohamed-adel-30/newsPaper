@@ -4,16 +4,19 @@ import { CommonModule } from '@angular/common';
 import { NewsRoutingModule } from './news-routing.module';
 import { AllnewsComponent } from './allnews/allnews.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
-import { SearchPipe } from './search.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+
 
 
 @NgModule({
-  declarations: [AllnewsComponent, NewsDetailsComponent, SearchPipe],
+  declarations: [AllnewsComponent, NewsDetailsComponent],
   imports: [
     CommonModule,
     NewsRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ]
 })
 export class NewsModule { }

@@ -8,8 +8,9 @@ import {SharedModule} from './shared/shared.module';
 import {PagesModule} from './pages/pages.module';
 import {HomeService} from './providers/home.service'
 import {NewsService} from './providers/news.service'
+import {NgxPaginationModule} from 'ngx-pagination';
 
-import {WebserviceService} from './providers/webservice.service'
+import {WebserviceService} from './providers/webservice.service';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {WebserviceService} from './providers/webservice.service'
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    PagesModule
+    PagesModule,
+    NgxPaginationModule
   ],
   providers: [WebserviceService,HomeService,NewsService],
   bootstrap: [AppComponent]
