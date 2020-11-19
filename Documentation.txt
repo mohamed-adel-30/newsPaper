@@ -1,0 +1,17 @@
+
+
+-this is an angular project
+
+1- clone project from " https://github.com/mohamed-adel-30/newsPaper.git "
+
+2- open cmd inside the newsPaper folder then write " npm instsall "
+
+3- write " ng serve -open "
+
+
+- I used json-server to get data from news.api
+
+1- open another terminal and write " npm i jsone-server " 
+
+2- write " npm run server "
+
