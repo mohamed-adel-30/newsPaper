@@ -44,8 +44,11 @@
                     font-size: 2rem;
                     font-weight: 800;
                 }
-                img {
-                    width: 30%;
+                .img-wrapper {
+                    width: 30px;
+                    img {
+                        width: 100%;
+                    }
                 }
                 .shape-7 {
                     margin: none;
@@ -53,7 +56,7 @@
             }
             &:nth-child(2) {
                 h3 {
-                    margin: 12% 0 !important;
+                    margin: 10% 0 !important;
                 }
             }
         }
@@ -71,8 +74,11 @@
                     margin: 0 25px;
                     text-align: center;
                     .shape-content {
-                        img {
-                            width: 30%;
+                        .img-wrapper {
+                            width: 21px;
+                            img {
+                                width: 100%;
+                            }
                         }
                     }
                     &:first-child {
@@ -110,6 +116,12 @@
                         h3 {
                             font-size: 2rem;
                         }
+                        .img-wrapper {
+                            width: 40px;
+                            img {
+                                width: 100%;
+                            }
+                        }
                     }
                     &:nth-child(2) {
                         h3 {
@@ -132,7 +144,7 @@
                 }
                 ul:first-child .rotation {
                     img {
-                        width: 25%;
+                        width: 100%;
                     }
                 }
                 .rotation {
@@ -146,8 +158,11 @@
                             font-size: 2.6rem;
                             margin-right: 0;
                         }
-                        img {
-                            width: 30%;
+                        .img-wrapper {
+                            width: 40px;
+                            img {
+                                width: 100%;
+                            }
                         }
                     }
                     &:nth-child(2) {
@@ -173,7 +188,7 @@
                     &:first-child {
                         .rotation {
                             img {
-                                width: 25%;
+                                width: 100%;
                             }
                         }
                     }
@@ -189,8 +204,11 @@
                             font-size: 2.6rem;
                             margin-bottom: 2rem;
                         }
-                        img {
-                            width: 30%;
+                        .img-wrapper {
+                            width: 40px;
+                            img {
+                                width: 100%;
+                            }
                         }
                     }
                     &:nth-child(2) {
